@@ -72,12 +72,5 @@ function pFormSubmit(){
         p.renderProject()
     })
 }
-// use label tags for(title:)
- 
-//   function fetchProjects(){
-//     fetch()
-//     .then()
-//     .then()
-// }
   //update
   //delete

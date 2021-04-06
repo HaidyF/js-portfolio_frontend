@@ -24,6 +24,5 @@ class Project {
             ${this.year}
         </li>
     </ul>
+    {/* <button class ="delete-button" data-id=${this.id}>Delete Project</button> */}
 }
-
-//instance method thats going to render the objects to DOM
