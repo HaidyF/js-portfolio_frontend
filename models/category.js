@@ -1,4 +1,4 @@
-class category {
+class Category {
     constructor(name) {
         this.name = name
     }
