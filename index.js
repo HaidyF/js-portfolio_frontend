@@ -1,5 +1,5 @@
 const BASE_URL = "http://localhost:3000"
-
+//READ
 function fetchProjects(){
     return fetch(`${BASE_URL}/projects`)
       .then(response => response.json())
@@ -17,6 +17,7 @@ function fetchProjects(){
       .then(results => console.log(results))
   })
 
+  //CREATE
   function newForm(){
       let pForm = document.getElementById("projects-form")
 
@@ -41,11 +42,38 @@ function fetchProjects(){
       pForm.addEventListener("submit", pFormSubmit)
 }
 
+function pFormSubmit(){
+    let title = document.getElementById("title").value
+    let quote = document.getElementById("quote").value
+    let description = document.getElementById("description").value
+    let image_URL = document.getElementById("image_URL").value
+    let location = document.getElementById("location").value
+    let year = document.getElementById("year").value
 
-
+    let project = {
+        title: title, 
+        quote: quote,
+        description: description,
+        image_URL: image_URL,
+        location: location,
+        year: year
+    }
+    fetch(`${BASE_URL}/projects`, {
+        method: "POST", 
+        headers: {
+            'Accept': 'application/json'
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(project)
+    })
+    .then(response =>  response.json())
+    .then(project => {
+        let p = new Project(project.id, project.title, project.quote, project.description, project.image_URL, project.location, project.year, project.category_id)
+        p.renderProject()
+    })
+}
 // use label tags for(title:)
-  
-  //create
+ 
 //   function fetchProjects(){
 //     fetch()
 //     .then()
