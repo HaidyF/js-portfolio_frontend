@@ -30,9 +30,9 @@ class Project {
             <li>
             Year Designed: <span class="year">${this.year}</span>
             </li>
-        <li>
+    
         <button class ="delete-button" data-id=${this.id}>Delete Project</button>
-        </li>
+        
    </ul>`
     
 }
