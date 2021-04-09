@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>Portfolio</title>
+    <title>Architect Portfolio</title>
     <link rel="stylesheet" href="index.css" />
     <script type="text/javascript" src="index.js"></script>
     <script type="text/javascript" src ="models/project.js" ></script>
@@ -23,6 +23,17 @@
         <div class="form-row">
             <label for="category_id">Category:</label> 
             <input type="text" id="category_id"></input>
+            <div class="field"> 
+                <label>Category:</label> 
+                <select id="id" name="id" onchange="$('category_id').submit()">
+                  <option value="9">Redisential</option>
+                  <option value="10">Commercial</option>
+                  <option value="10">Family House</option>
+                  <option value="10">Mixed Use</option>
+                </select>
+            </div> 
+            <!-- <select_tag(:id, options_from_collection_for_select(category_id, id, name)> -->
+           
         </div>
         <div class="form-row">
             <label for="description">Description:</label> 

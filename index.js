@@ -1,4 +1,5 @@
 const BASE_URL = "http://localhost:3000"
+const projectList = document.getElementById('projects-form')
 //READ
 function fetchProjects(){
     return fetch(`${BASE_URL}/projects`)
@@ -63,4 +64,35 @@ function pFormSubmit(){
     
 }
   //update
+  
   //delete
+  function projectItem(id){
+        let configObj = {
+            method: 'DELETE',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            }
+        }
+    
+        fetch(`http://localhost:3000/projects/${id}`, configObj)
+        .then(res => res.json())
+        .then(json => {
+            alert(json.message)
+        })
+    
+        let item = document.getElementById(`item-${id}`)
+        item.remove()
+    }
+
+    function handleListClick(c){
+        if (c.target.className === "delete"){
+            let id = c.target.dataset.id
+             deleteItem(id)
+        } 
+     }
+
+     document.addEventListener('DOMContentLoaded', () => {
+        fetchProjects()
+        projectList.addEventListener('click', handleListClick)
+    })

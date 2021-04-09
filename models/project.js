@@ -15,6 +15,10 @@ class Project {
     "<ul>"+
         "<h2>Project: "+ this.title + "</h2>"+
         "<li>"+
+            "Project Image: "+
+            "<img src=\""+this.image_URL+"\">"+
+            "</li>"+
+            "<li>"+
             "Quote: "+
             this.quote+
             "</li>"+
@@ -23,16 +27,15 @@ class Project {
             this.description+
             "</li>"+
             "<li>"+
-            "Project Image: "+
-            "<img src=\""+this.image_URL+"\">"+
-            "</li>"+
-            "<li>"+
             this.location+
             "</li>"+
             "<li>"+
             this.year+
         "</li>"+
+        // "<li>"+
+        // "{<button class ="delete-button" data-id=${this.id}>Delete Project</button>}"+
+        // "</li>"
    "</ul>"
-    {/* <button class ="delete-button" data-id=${this.id}>Delete Project</button> */}
+    
 }
 }
