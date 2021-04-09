@@ -26,13 +26,14 @@ function fetchProjects(){
 }
 
 function pFormSubmit(){
+    event.preventDefault()
     let title = document.getElementById("title").value
     let quote = document.getElementById("quote").value
     let description = document.getElementById("description").value
     let image_URL = document.getElementById("image_URL").value
     let location = document.getElementById("location").value
     let year = parseInt(document.getElementById("year").value)
-    let category_id = document.getElementById("category_id").value
+    let category_id = document.getElementById("id").value
     
     let project = {
         title: title, 
@@ -75,7 +76,7 @@ function pFormSubmit(){
             }
         }
     
-        fetch(`http://localhost:3000/projects/${id}`, configObj)
+        fetch(`${BASE_URL}/projects/${id}`, configObj)
         .then(res => res.json())
         .then(json => {
             alert(json.message)
