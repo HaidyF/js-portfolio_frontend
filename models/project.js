@@ -12,33 +12,28 @@ class Project {
     renderProject(){
         let pDiv = document.getElementById("projects-container")
         pDiv.innerHTML +=
-        //backtick
-    "<ul>"+
-        "<h2>Project: "+ this.title + "</h2>"+
-        "<li>"+
-            "Project Image: "+
-            "<img src=\""+this.image_URL+"\">"+
-            "</li>"+
-            "<li>"+
-            "Quote: "+
-            this.quote+
-            "</li>"+
-            "<li>"+
-            "Description: "+ 
-            this.description+
-            "</li>"+
-            "<li>"+
-            "Location: "+ 
-            this.location+
-            "</li>"+
-            "<li>"+
-            "Year Designed: "+ 
-            this.year+
-        "</li>"+
-        // "<li>"+
-        // "<button class ="delete-button" data-id=${this.id}>Delete Project</button>"+
-        // "</li>"
-   "</ul>"
+        
+        "<img src=\""+this.image_URL+"\">"+
+      
+        `<ul>
+        <h2>Project Title: <strong class="title">${this.title}</strong></h2>
+
+            <li>
+            Quote: <span class="quote">${this.quote}</span>
+            </li>
+            <li>
+            Description: <span class="description">${this.description}</span>
+            </li>
+            <li>
+            Location: <span class="location">${this.location}</span>
+            </li>
+            <li>
+            Year Designed: <span class="year">${this.year}</span>
+            </li>
+        <li>
+        <button class ="delete-button" data-id=${this.id}>Delete Project</button>
+        </li>
+   </ul>`
     
 }
 }
