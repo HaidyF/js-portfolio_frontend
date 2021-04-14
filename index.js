@@ -1,5 +1,5 @@
 const BASE_URL = "http://localhost:3000"
-const projectList = document.getElementById('projects-form')
+let projectList = document.getElementById('projects-form')
 //READ
 function fetchProjects(){
     return fetch(`${BASE_URL}/projects`)
@@ -7,7 +7,7 @@ function fetchProjects(){
       .then(projects => {
           console.log(projects)
           for (const project of projects){
-            let p = new Project(project.title, project.quote, project.description, project.image_URL, project.location, project.year, project.category_id)
+            let p = new Project(project.id, project.title, project.quote, project.description, project.image_URL, project.location, project.year, project.category_id)
             p.renderProject()
         }
       })
@@ -17,7 +17,8 @@ function fetchProjects(){
    newForm()
     this.fetchProjects()
       .then(results => console.log(results))
-  })
+  }
+  )
 
   //CREATE
   function newForm(){
@@ -67,7 +68,7 @@ function pFormSubmit(){
   //update
   
   //delete
-  function projectItem(id){
+  function deleteItem(id){
         let configObj = {
             method: 'DELETE',
             headers: {
@@ -80,20 +81,6 @@ function pFormSubmit(){
         .then(res => res.json())
         .then(json => {
             alert(json.message)
+            window.location.reload()
         })
-    
-        let item = document.getElementById(`item-${id}`)
-        item.remove()
     }
-
-    function handleListClick(c){
-        if (c.target.className === "delete"){
-            let id = c.target.dataset.id
-             deleteItem(id)
-        } 
-     }
-
-     document.addEventListener('DOMContentLoaded', () => {
-        fetchProjects()
-        projectList.addEventListener('click', handleListClick)
-    })

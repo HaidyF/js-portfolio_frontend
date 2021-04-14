@@ -1,8 +1,9 @@
 
-
 #name{
     background: url("../images/banner.jpg") no-repeat center top;
-	-webkit-background-size: cover;
+	  background-repeat: no-repeat;
+  background-size: auto;
+    -webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
@@ -59,8 +60,10 @@ body{
 }
 
 #projects-form{
-	background-image:url('https://cdn.artphotolimited.com/images/5805227412eeb3002fbce016/1000x1000/manhattan-skyline-and-reflections.jpg');
-    width:100%;
+	background-image:url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/3-chicago-skyline-at-night-pawelgaul.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    width:720px;
 	padding:0 30px;
 	min-height:200px;
 	margin-bottom:30px;
@@ -74,3 +77,4 @@ body{
 	min-height:300px;
 	margin-bottom:30px;
 }
+/* https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/blazing-nyc-skyline-patrick-jacquet.jpg */

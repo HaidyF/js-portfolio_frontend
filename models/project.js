@@ -1,5 +1,6 @@
 class Project {
-    constructor(title, quote, description, image_URL, location, year, category_id) {
+    constructor(id, title, quote, description, image_URL, location, year, category_id) {
+        this.id = id
         this.title = title
         this.quote = quote
         this.description = description
@@ -31,15 +32,8 @@ class Project {
             Year Designed: <span class="year">${this.year}</span>
             </li>
     
-        <button class ="delete-button" data-id=${this.id}>Delete Project</button>
-        
-   </ul>`
-    
+        <button class="delete-button" onclick="deleteItem(${this.id})" data-id=${this.id}>Delete Project</button>    
+   </ul>`   
 }
-
-// static resetAllItems(){
-//     Project.all.forEach(el => el.attachToDom())
-//     document.getElementByClass("delete-button").remove()
-// }
 
 }
