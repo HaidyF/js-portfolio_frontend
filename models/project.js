@@ -36,4 +36,10 @@ class Project {
    </ul>`
     
 }
+
+// static resetAllItems(){
+//     Project.all.forEach(el => el.attachToDom())
+//     document.getElementByClass("delete-button").remove()
+// }
+
 }

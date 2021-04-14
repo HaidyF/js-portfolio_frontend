@@ -1,6 +1,6 @@
 #name{	background-color:#f4f4f4;
 	color:#555;
-    background-image:url('https://static.vecteezy.com/system/resources/thumbnails/001/078/367/small_2x/abstract-grey-white-simple-background.jpg');
+    background-image:url('https://media.istockphoto.com/photos/dark-blue-metal-pattern-background-picture-id1161683700?k=6&m=1161683700&s=612x612&w=0&h=Cg1AiHKYi7Epp-U_oGW07GIq7LRvNr7udV-bATHiUSg=');
     width:100%;
     text-align: center;
 	font-family:Arial, Helvetica, sans-serif;
@@ -55,7 +55,7 @@ body{
 	padding:0 30px;
 	min-height:300px;
 	margin-bottom:30px;
-    color: #fff;
+    color: #555;
 }
 
 #projects-container{
