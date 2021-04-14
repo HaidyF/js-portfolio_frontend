@@ -1,5 +1,6 @@
 const BASE_URL = "http://localhost:3000"
 let projectList = document.getElementById('projects-form')
+
 //READ
 function fetchProjects(){
     return fetch(`${BASE_URL}/projects`)
@@ -20,7 +21,7 @@ function fetchProjects(){
   }
   )
 
-  //CREATE
+//CREATE
   function newForm(){
       let pForm = document.getElementById("projects-form")
       pForm.addEventListener("submit", pFormSubmit)
@@ -44,7 +45,6 @@ function pFormSubmit(){
         location: location,
         year: year,
         category_id: category_id
-
     }
     fetch(`${BASE_URL}/projects`, {
         method: 'POST',
@@ -65,9 +65,7 @@ function pFormSubmit(){
     })
     
 }
-  //update
-  
-  //delete
+//DELETE
   function deleteItem(id){
         let configObj = {
             method: 'DELETE',
