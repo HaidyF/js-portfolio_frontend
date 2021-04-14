@@ -20,7 +20,7 @@ class Project {
         <h2>Project Title: <strong class="title">${this.title}</strong></h2>
 
             <li>
-            Quote: <span class="quote">${this.quote}</span>
+            Quote: <span class="quote">"${this.quote}."</span>
             </li>
             <li>
             Description: <span class="description">${this.description}</span>
