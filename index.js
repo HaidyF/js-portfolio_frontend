@@ -66,7 +66,7 @@ function pFormSubmit(event){
     
 }
 //DELETE
-  function deleteItem(id){
+  function deleteProject(id){
         let configObj = {
             method: 'DELETE',
             headers: {

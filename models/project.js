@@ -32,7 +32,7 @@ class Project {
             Year Designed: <span class="year">${this.year}</span>
             </li>
     
-        <button class="delete-button" onclick="deleteItem(${this.id})" data-id=${this.id}>Delete Project</button>    
+        <button class="delete-button" onclick="deleteProject(${this.id})" data-id=${this.id}>Delete Project</button>    
    </ul>`   
 }
 
