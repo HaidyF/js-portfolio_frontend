@@ -27,7 +27,7 @@ function fetchProjects(){
       pForm.addEventListener("submit", pFormSubmit)
 }
 
-function pFormSubmit(){
+function pFormSubmit(event){
     event.preventDefault()
     let title = document.getElementById("title").value
     let quote = document.getElementById("quote").value
