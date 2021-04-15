@@ -5,6 +5,4 @@ class Category {
         this.categoryList = document.getElementById('category-list')
     }
 
-
-    
 }

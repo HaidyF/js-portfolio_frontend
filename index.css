@@ -62,7 +62,7 @@ body{
 #projects-form{
 	background-image:url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/3-chicago-skyline-at-night-pawelgaul.jpg');
 	background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 100%;
 	padding:0 30px;
 	min-height:200px;
 	margin-bottom:30px;
