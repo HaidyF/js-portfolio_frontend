@@ -1,25 +1,25 @@
 const BASE_URL = "http://localhost:3000"
 let projectList = document.getElementById('projects-form')
+let allProjects = []
 
 //READ
 function fetchProjects(){
     return fetch(`${BASE_URL}/projects`)
       .then(response => response.json())
       .then(projects => {
-          console.log(projects)
-          for (const project of projects){
-            let p = new Project(project.id, project.title, project.quote, project.description, project.image_URL, project.location, project.year, project.category_id)
-            p.renderProject()
-        }
+          projects.forEach(
+            project => {
+                let p = new Project(project.id, project.title, project.quote, project.description, project.image_URL, project.location, project.year, project.category_id)
+                p.renderProject()
+                allProjects.push(p)
+})
       })
   }
 
   document.addEventListener('DOMContentLoaded', () => {
    newForm()
     this.fetchProjects()
-      .then(results => console.log(results))
-  }
-  )
+  })
 
 //CREATE
   function newForm(){
@@ -57,14 +57,13 @@ function pFormSubmit(event){
 
     .then(response =>  {
         response.json()
-        console.log(response)
     })
     .then(json => {
         console.log(json)
         window.location.reload()
     })
-    
 }
+
 //DELETE
   function deleteProject(id){
         let configObj = {
@@ -80,5 +79,37 @@ function pFormSubmit(event){
         .then(json => {
             alert(json.message)
             window.location.reload()
+        })
+    }
+    
+    function filterByCategory(category){
+        let categoryProjects = document.getElementById('projectItemList')
+        categoryProjects.innerHTML = ""
+
+        allProjects.forEach( p => {
+            if ((p.category_id == category.value) || (category.value == 0)){
+                categoryProjects.innerHTML +=
+        
+        "<img src=\""+p.image_URL+"\">"+
+      
+        `<ul>
+        <h2>Project Title: <strong class="title">${p.title}</strong></h2>
+
+            <li>
+            Quote: <span class="quote">"${p.quote}."</span>
+            </li>
+            <li>
+            Description: <span class="description">${p.description}</span>
+            </li>
+            <li>
+            Location: <span class="location">${p.location}</span>
+            </li>
+            <li>
+            Year Designed: <span class="year">${p.year}</span>
+            </li>
+    
+        <button class="delete-button" onclick="deleteProject(${p.id})" data-id=${p.id}>Delete Project</button>    
+   </ul>`   
+            }
         })
     }

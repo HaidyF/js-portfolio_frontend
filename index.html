@@ -63,15 +63,20 @@
         <div class="column">
             <ul id="category-list">
                 <h2>Filter By Category:</h2>
-                <select name="category" id="category" onclick="result()">
-                  <option name= "category_id" value="7">Redisential</option>
+                <select name="category" id="categoryDropdown" onchange="filterByCategory(this)">
+                    <option name= "category_id" value="0">All</option>
+                    <option name= "category_id" value="7">Redisential</option>
                   <option name= "category_id" value="8">Commercial</option>
                   <option name= "category_id" value="9">Family House</option>
                   <option name= "category_id" value="10">Mixed Use</option>
                 </select>
             </ul>
-        </div>
+        </div> 
 
+        <div id="projectItemList">
+
+        </div>
+            
     </div>
 
 </body>

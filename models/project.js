@@ -11,7 +11,7 @@ class Project {
     }
 
     renderProject(){
-        let pDiv = document.getElementById("projects-container")
+        let pDiv = document.getElementById("projectItemList")
         pDiv.innerHTML +=
         
         "<img src=\""+this.image_URL+"\">"+
@@ -35,5 +35,4 @@ class Project {
         <button class="delete-button" onclick="deleteProject(${this.id})" data-id=${this.id}>Delete Project</button>    
    </ul>`   
 }
-
 }
