@@ -49,6 +49,9 @@ const projectsAdapter = new ProjectsAdapter
 
 
 //DELETE
+// function addDeleteListener(id){
+//     document.querySelector(`ul button`).addEventListener('click', projectsAdapter.deleteProject(id))
+ //}
 function deleteProject(id){
     let configObj = {
         method: 'DELETE',

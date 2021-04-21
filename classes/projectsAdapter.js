@@ -11,6 +11,7 @@ class ProjectsAdapter{
                 project => {
                     let p = new Project(project.id, project.title, project.quote, project.description, project.image_URL, project.location, project.year, project.category_id)
                     p.renderProject()
+
                     allProjects.push(p)
                 })
           })
@@ -55,19 +56,5 @@ class ProjectsAdapter{
             let prForm = document.getElementById("projectForm")
             prForm.reset()
     }
-   //    deleteProject(id){
-    //     let configObj = {
-    //         method: 'DELETE',
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             Accept: "application/json"
-    //         }
-    //     }
-    
-    //     fetch(this.BASE_URL + `/${id}`, configObj)
-    //     .then(res => res.json())
-    //     .then(json => {
-    //     alert(json.message)
-    //     })
 
 }
