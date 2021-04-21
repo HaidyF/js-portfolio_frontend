@@ -35,6 +35,7 @@ function deleteProject(id){
    
     let proj = document.getElementById(`project-${id}`)
     proj.remove()
+    
 })
 }
 

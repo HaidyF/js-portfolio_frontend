@@ -27,7 +27,7 @@ class ProjectsAdapter{
         let image_URL = document.getElementById("image_URL").value
         let location = document.getElementById("location").value
         let year = parseInt(document.getElementById("year").value)
-        let category_id = document.getElementById("id").value
+        let category_id = document.getElementById("selectBar").value
         
         let project = {
             title, 
