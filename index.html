@@ -31,11 +31,7 @@
         
             <div class="field"> 
                 <label>Category:</label> 
-                <select id="id" name="id" onchange="$('category_id').submit()">
-                  <option name= "category_id" value="7">Redisential</option>
-                  <option name= "category_id" value="8">Commercial</option>
-                  <option name= "category_id" value="9">Family House</option>
-                  <option name= "category_id" value="10">Mixed Use</option>
+                <select id="selectBar" name="id">
                 </select>
         </div>
         <br>
@@ -66,10 +62,6 @@
                 <h2>Filter By Category:</h2>
                 <select name="category" id="categoryDropdown" onchange="filterByCategory(this)">
                     <option name= "category_id" value="0">All</option>
-                    <option name= "category_id" value="7">Redisential</option>
-                  <option name= "category_id" value="8">Commercial</option>
-                  <option name= "category_id" value="9">Family House</option>
-                  <option name= "category_id" value="10">Mixed Use</option>
                 </select>
             </ul>
         </div> 

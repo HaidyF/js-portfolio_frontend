@@ -7,6 +7,7 @@ const projectsAdapter = new ProjectsAdapter
   document.addEventListener('DOMContentLoaded', () => {
    newForm()
     projectsAdapter.fetchProjects()
+    fetchCategory()
   })
 
 //CREATE
@@ -14,6 +15,52 @@ const projectsAdapter = new ProjectsAdapter
       let pForm = document.getElementById("projects-form")
       pForm.addEventListener("submit", projectsAdapter.pFormSubmit)
 }  
+
+//DELETE
+
+function deleteProject(id){
+    let configObj = {
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        }
+    }
+
+    fetch(`${BASE_URL}/projects/${id}`, configObj)
+    .then(res => res.json())
+    .then(json => {
+        alert(json.message)
+        window.location.reload()
+    })
+}
+
+//CATEGORY
+function fetchCategory(){
+    fetch(`${BASE_URL}/categories`)
+    .then(res => res.json())
+    .then(data => {
+        selectMenu = document.getElementById('selectBar')
+        filterMenu = document.getElementById('categoryDropdown')
+        console.log(filterMenu)
+        data.forEach(
+            d => {
+                 d.name
+                 d.id
+                 console.log(d)
+             
+        selectMenu.innerHTML +=
+        `
+            <option name= "category_id" value="${d.id}">${d.name}</option>
+    
+        `
+        filterMenu.innerHTML +=
+        `
+            <option name= "category_id" value="${d.id}">${d.name}</option>
+        `
+        })
+    })
+}
     
 //FILTER
     function filterByCategory(category){
@@ -46,25 +93,3 @@ const projectsAdapter = new ProjectsAdapter
    </ul>`}
         })
     }
-
-
-//DELETE
-// function addDeleteListener(id){
-//     document.querySelector(`ul button`).addEventListener('click', projectsAdapter.deleteProject(id))
- //}
-function deleteProject(id){
-    let configObj = {
-        method: 'DELETE',
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-        }
-    }
-
-    fetch(`${BASE_URL}/projects/${id}`, configObj)
-    .then(res => res.json())
-    .then(json => {
-        alert(json.message)
-        window.location.reload()
-    })
-}
