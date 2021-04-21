@@ -16,6 +16,7 @@ class ProjectsAdapter{
           })
       }
 
+    
     pFormSubmit(event){
         event.preventDefault()
 
@@ -52,5 +53,21 @@ class ProjectsAdapter{
             console.log(project)
         window.location.reload()})
     }
-   
+
+   //     deleteProject(id){
+//         let configObj = {
+//             method: 'DELETE',
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 Accept: "application/json"
+//             }
+//         }
+    
+//         fetch(this.BASE_URL + `/${id}`, configObj)
+//         .then(res => res.json())
+//         .then(json => {
+//         alert(json.message)
+//         })
+// 
+
 }
