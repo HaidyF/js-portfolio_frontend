@@ -33,7 +33,7 @@ function deleteProject(id){
         alert(json.message)
         // window.location.reload()
    
-    let proj = document.getElementById(`project-${id}`)
+    let proj = document.getElementById(`data-${id}`)
     proj.remove()
     
 })
