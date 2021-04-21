@@ -31,8 +31,11 @@ function deleteProject(id){
     .then(res => res.json())
     .then(json => {
         alert(json.message)
-        window.location.reload()
-    })
+        // window.location.reload()
+   
+    let proj = document.getElementById(`project-${id}`)
+    proj.remove()
+})
 }
 
 //CATEGORY
