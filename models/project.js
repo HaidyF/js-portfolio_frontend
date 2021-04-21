@@ -1,4 +1,7 @@
 class Project {
+
+    static all = []
+
     constructor(id, title, quote, description, image_URL, location, year, category_id) {
         this.id = id
         this.title = title
@@ -8,6 +11,8 @@ class Project {
         this.location = location
         this.year = year
         this.category_id = category_id
+
+        Project.all.push(this)
     }
 
     renderProject(){
@@ -34,5 +39,4 @@ class Project {
     
         <button class="delete-button" onclick="deleteProject(${this.id})" data-id=${this.id}>Delete Project</button>    
    </ul>`   
-}
-}
+}}

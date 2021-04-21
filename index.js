@@ -12,7 +12,7 @@ function fetchProjects(){
                 let p = new Project(project.id, project.title, project.quote, project.description, project.image_URL, project.location, project.year, project.category_id)
                 p.renderProject()
                 allProjects.push(p)
-})
+            })
       })
   }
 
@@ -46,6 +46,7 @@ function pFormSubmit(event){
         year: year,
         category_id: category_id
     }
+
     fetch(`${BASE_URL}/projects`, {
         method: 'POST',
         headers: {
@@ -109,7 +110,6 @@ function pFormSubmit(event){
             </li>
     
         <button class="delete-button" onclick="deleteProject(${p.id})" data-id=${p.id}>Delete Project</button>    
-   </ul>`   
-            }
+   </ul>`}
         })
     }
